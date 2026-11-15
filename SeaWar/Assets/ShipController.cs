@@ -42,7 +42,7 @@ public class ShipController : MonoBehaviour
         rb.AddRelativeForce(fuerzaMovimiento, ForceMode.Force);
 
         // 2. Efecto Timón Real: El giro depende de que el barco se esté moviendo
-        float forwardSpeed = Vector3.Dot(rb.velocity, transform.forward);
+        float forwardSpeed = Vector3.Dot(rb.linearVelocity, transform.forward);
         
         // Si está parado (velocidad 0), el factor de giro es 0 para evitar giros sobre su propio eje
         float factorGiro = Mathf.Clamp01(Mathf.Abs(forwardSpeed) / 3f);
